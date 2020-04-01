@@ -26,5 +26,6 @@ setup(
     url='https://github.com/jerinpetergeorge/django-simple-select2',
     download_url=download_url % version,
     install_requires=[],
+    long_description_content_type='text/markdown',
     license='MIT-Zero'
 )
