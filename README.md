@@ -74,3 +74,6 @@ urlpatterns = [
 
 
 ```
+
+## Demo
+You will find a simple demo app here, [**simple-select2-demo**](https://github.com/jerinpetergeorge/simple-select2-demo)
