@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from setuptools import setup
 
 with open('VERSION.txt', 'r') as v:
@@ -21,6 +21,7 @@ setup(
     author_email='jerinpetergeorge@gmail.com',
     url='https://github.com/jerinpetergeorge/django-simple-select2',
     download_url=download_url % version,
+    python_requires='>=3.6',
     setup_requires=[
         'setuptools>=38.6.0',  # for long_description_content_type
     ],
