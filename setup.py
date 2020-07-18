@@ -8,7 +8,7 @@ with open('README.md', 'r') as r:
     readme = r.read()
 
 download_url = (
-    'https://github.com/jerinpetergeorge/django-simple-select2/tarball/%s'
+    'https://github.com/jerinpetergeorge/django-simple-select2/archive/v%s.tar.gz'
 )
 
 setup(
