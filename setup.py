@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from setuptools import setup
+from setuptools import find_packages, setup
 
 with open('VERSION.txt', 'r') as v:
     version = v.read().strip()
@@ -13,7 +13,7 @@ download_url = (
 
 setup(
     name='django-simple-select2',
-    packages=['simple_select2'],
+    packages=find_packages(),
     version=version,
     description='Tweaks for existing built-in Django\'s autocomplete feature',
     long_description=readme,
