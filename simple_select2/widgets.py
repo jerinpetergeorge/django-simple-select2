@@ -4,14 +4,14 @@ from django import forms
 
 
 class AutoCompleteSelect2Mixin(AutocompleteMixin):
-    def __init__(self, url, attrs=None, choices=(), using=None):
-        self.url = url
-        self.db = using
-        self.choices = choices
-        self.attrs = {} if attrs is None else attrs.copy()
+    def __init__(self, url, **kwargs):
+        kwargs.setdefault('rel', None)
+        kwargs.setdefault('admin_site', None)
+        super().__init__(**kwargs)
+        self.__url = url
 
     def get_url(self):
-        return reverse(self.url)
+        return reverse(self.__url)
 
 
 class AutoCompleteSelect2(AutoCompleteSelect2Mixin, forms.Select):
