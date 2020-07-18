@@ -1,9 +1,5 @@
 #!/usr/bin/env python
-
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
 
 with open('VERSION.txt', 'r') as v:
     version = v.read().strip()
@@ -25,6 +21,9 @@ setup(
     author_email='jerinpetergeorge@gmail.com',
     url='https://github.com/jerinpetergeorge/django-simple-select2',
     download_url=download_url % version,
+    setup_requires=[
+        'setuptools>=38.6.0',  # for long_description_content_type
+    ],
     install_requires=['Django>=2.2'],
     long_description_content_type='text/markdown',
     license='MIT-Zero'
