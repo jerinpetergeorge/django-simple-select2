@@ -25,7 +25,7 @@ setup(
     author_email='jerinpetergeorge@gmail.com',
     url='https://github.com/jerinpetergeorge/django-simple-select2',
     download_url=download_url % version,
-    install_requires=[],
+    install_requires=['Django>=2.2'],
     long_description_content_type='text/markdown',
     license='MIT-Zero'
 )
