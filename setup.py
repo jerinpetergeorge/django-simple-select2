@@ -15,7 +15,7 @@ setup(
     name='django-simple-select2',
     packages=['simple_select2'],
     version=version,
-    description='Tweaks for existing built-in Django"s autocomplete feature',
+    description='Tweaks for existing built-in Django\'s autocomplete feature',
     long_description=readme,
     author='Jerin Peter George',
     author_email='jerinpetergeorge@gmail.com',
