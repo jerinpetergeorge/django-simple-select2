@@ -88,6 +88,35 @@ urlpatterns = [
 ```
 
 
+## Settings
+
+### `SIMPLE_SELECT2_THEME`
+
+Sets the project-wide default [theme](https://select2.org/appearance#themes)
+to be used by Select2 for all widgets inheriting from `AutoCompleteSelect2Mixin`.
+Can be overridden per widget using parameter `theme`.
+
+Supported values are:
+- `None` (or unset) will use theme `"admin-autocomplete"`. This is the default.
+- `"admin-autocomplete"` uses the theme of Django Admin.
+- `"bootstrap4"` uses a bundled copy of Takashi Kanemoto's [select2-bootstrap4-theme](https://github.com/ttskch/select2-bootstrap4-theme).
+  Please note that this theme requires that you
+  [pull in Bootstrap 4 CSS and JavaScript assets](https://getbootstrap.com/docs/4.0/getting-started/introduction/#quick-start)
+  in your templates somewhere yourself.
+- `"classic"` uses the old classic theme of upstream Select2. Not much different from theme `"admin-autocomplete"`.
+- `"default"` uses the default upstream theme of Select2.
+
+
+### `SIMPLE_SELECT2_WIDTH`
+
+Sets the project-wide default [width](https://select2.org/appearance#container-width)
+to be used by Select2 for all widgets inheriting from `AutoCompleteSelect2Mixin`.
+Can be overridden per widget using parameter `width`.
+
+For supported values, please check the [official documentation of parameter `width` of Select2](https://select2.org/appearance#container-width).
+By default, django-simple-select2 does not enforce any width on Select2.
+
+
 ## Demo
 
 You will find a simple demo app here, [**simple-select2-demo**](https://github.com/jerinpetergeorge/simple-select2-demo)
