@@ -2,13 +2,19 @@
 
 This simple django app enables users to do a few tweaks to [Django's built-in autocomplete](https://docs.djangoproject.com/en/dev/ref/contrib/admin/#django.contrib.admin.ModelAdmin.autocomplete_fields) feature.
 
+
 ## Installation
+
 ```bash
 pip install django-simple-select2
 ```
+
+
 ## Usage
+
+### `models.py`
+
 ```python
-# models.py
 class Publication(models.Model):
     name = models.CharField(max_length=100)
 
@@ -32,8 +38,12 @@ class Article(models.Model):
 
     def __str__(self):
         return self.headline
-        
-# admin.py
+```
+
+
+### `admin.py`
+
+```python
 from django.contrib import admin
 from .models import Article
 from simple_select2 import Select2Admin, AutoCompleteSelect2, AutoCompleteSelect2Multiple
@@ -47,8 +57,12 @@ class ArticleModelAdmin(Select2Admin, admin.ModelAdmin):
 
 
 admin.site.register(Article, ArticleModelAdmin)
+```
 
-#views.py
+
+### `views.py`
+
+```python
 from simple_select2 import AutoCompleteBaseView
 from .models import Reporter, Publication
 
@@ -61,7 +75,7 @@ class ReporterView(AutoCompleteBaseView):
 class PublicationView(AutoCompleteBaseView):
     model = Publication
     search_fields = ('name',)
-    
+
 #urls.py
 from django.urls import path
 from .views import ReporterView, PublicationView
@@ -71,9 +85,9 @@ urlpatterns = [
     path('publication/', PublicationView.as_view(), name='select2-publication-list'),
     ...
 ]
-
-
 ```
 
+
 ## Demo
+
 You will find a simple demo app here, [**simple-select2-demo**](https://github.com/jerinpetergeorge/simple-select2-demo)
