@@ -75,8 +75,12 @@ class ReporterView(AutoCompleteBaseView):
 class PublicationView(AutoCompleteBaseView):
     model = Publication
     search_fields = ('name',)
+```
 
-#urls.py
+
+### `urls.py`
+
+```python
 from django.urls import path
 from .views import ReporterView, PublicationView
 
